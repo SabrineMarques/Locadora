@@ -1,0 +1,383 @@
+/* Fontes externas */
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100&family=Tiro+Devanagari+Hindi&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Roboto:wght@100&display=swap');
+
+* {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background-color: #D5E1EC;
+}
+
+/* MENU */
+#menu ul {
+    list-style-type: none;
+    background-color: #345993;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 30px;
+    position: relative;
+  
+  }
+  
+  #menu ul li {
+    display: inline;
+    font-style: normal;
+    font-size: 25px;
+    line-height: 30px;
+    color: #FFFFFF;
+  }
+  #menu ul li i {
+    margin-right: 10px;
+  }
+
+  
+  
+  #logo4branca {
+    width: 300px;
+    display: inline-block;
+    left: 50px;
+    top: 10px;
+    position: absolute;
+  
+  }
+  
+  #menu ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 40px;
+    display: inline-block;
+    margin-top: 1.5%;
+  
+  }
+  
+  #menu ul li a:hover {
+    color: rgb(140, 187, 240);
+    transition: 0.5s;
+  }
+  
+  #menu ul li:last-child {
+    display: inline-block;
+    background-color: #507dc1;
+    font-size: 35px;
+    border-radius: 80px;
+    position: absolute;
+    right: 50px;
+    top: 30px;
+    line-height: 5px;
+    width: 150px;
+    height: 80px;
+  
+  }
+  #menu ul li:last-child:hover {
+    background-color: #C05050;
+    transition: 0.5s;
+  
+  }
+  #menu ul li:last-child a:hover {
+    color: rgb(255, 255, 255);
+    transition: 0.5s;
+  }
+
+/* */
+
+  
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #12305F;
+    font-size: 35px;
+}
+
+h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #FFFFFF;
+    font-size: 25px;
+}
+
+#bannerwelcome {
+    position: relative;
+    width: 100%;
+    height: 700px;
+
+    
+}
+.banner {
+    display: block; /* define a imagem como um bloco */
+    margin-left: auto; /* alinha a margem esquerda como automática */
+    margin-right: auto; /* alinha a margem direita como automática */
+    
+}
+#texto1 {
+    padding-top: 30px;
+    text-align: center;
+    margin-bottom: 3%;
+
+}
+/* Relatórios Blocos */ 
+
+main.cards {
+    display: flex;
+    padding: 32px;
+    text-align: center;
+    margin-left: 10%;
+}
+
+main.cards section.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: white;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    max-height: 468px;
+    margin-left: 32px;
+}
+
+main.cards section.card:first-child {
+    margin-left: 0;
+}
+
+main.cards section.card .icon {
+   width: 100px;
+  
+}
+
+main.cards section.card img {
+    width: 100%;
+}
+
+main.cards section.card h3 {
+    font-size: 65px;
+    margin: 16px 0;
+}
+
+main.cards section.card span {
+    font-weight: 300;
+    max-width: 240px;
+    font-size: 28px;
+    margin-bottom: 16px;
+    font-family: 'Instrument Serif', serif;
+    font-family: 'Roboto', sans-serif;
+    
+}
+
+main.cards section.card button {
+    padding: 0.5rem 1rem;
+    text-transform: uppercase;
+    border-radius: 32px;
+    border: 0;
+    cursor: pointer;
+    font-size: 80%;
+    font-weight: 500;
+    margin-bottom: 16px;
+    color: white;
+}
+
+main.cards section.card button a {
+    color: white;
+    text-decoration: none;
+}
+
+main.cards section.card.contact button {
+    margin-top: 10%;
+    background-color: #236edf;
+}
+main.cards section.card.shop button {
+    margin-top: 10%;
+    background-color: #236edf;
+}
+main.cards section.card.about button {
+    margin-top: 10%;
+    background-color: #236edf;
+}
+main.cards section.card.contact button:hover {
+    background-color: #084092;
+    transition: 0.5s;
+}
+main.cards section.card.shop button:hover {
+    background-color: #084092;
+    transition: 0.5s;;
+}
+main.cards section.card.about button:hover {
+    background-color: #084092;
+    transition: 0.5s;
+}
+main.cards section.card.contact {
+    box-shadow: 20px 20px 50px -30px #AFD6FF;
+}
+main.cards section.card.shop {
+    box-shadow: 20px 20px 50px -30px #AFD6FF;
+}
+main.cards section.card.about {
+    box-shadow: 20px 20px 50px -30px #AFD6FF;
+}
+
+
+
+h3 {
+
+    font-family: 'Tiro Devanagari Hindi', serif;
+    color: #507DC0;
+}
+
+
+
+
+/* Rodapé */ 
+footer {
+    background-color: #345993;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    margin-top: 10%;
+  }
+footer ul {
+    text-align: center;
+}
+footer ul li {
+    display: inline-block;
+    margin: 10px;
+    list-style-type: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+footer ul li a{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+
+.ultimoaluguel {
+    background-color: white;
+    width: 700px;
+    height: 300px;
+    padding-top: 20px;
+    margin-top: 2%;
+    text-align: center;
+    box-shadow: 20px 20px 50px -30px #AFD6FF;
+    border-radius: 8px;
+}
+.ultimoaluguel h2 {
+    margin-top: 3%;
+    color: rgb(0, 30, 49);
+    text-align: justify;
+    margin-left: 3%;
+    font-family: 'Instrument Serif', serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+.ultimoaluguel img {
+width: 400px;
+height: 400px;
+}
+
+.ultimoaluguel button {
+    padding: 0.5rem 1rem;
+    text-transform: uppercase;
+    border-radius: 32px;
+    border: 0;
+    cursor: pointer;
+    font-size: 80%;
+    font-weight: 500;
+   background-color: #507DC0;
+   margin-top: 6%;
+
+}
+
+.ultimoaluguel button a {
+    color: white;
+    text-decoration: none;
+}
+.ultimoaluguel button:hover {
+    background-color: #084092;
+    transition: 0.5s;
+}
+
+.ultimoaluguel span {
+    color: #214185;
+}
+
+.ultimoaluguel h2 .fa-solid {
+    margin-left: 3%;
+    margin-right: 3%;
+    
+}
+.mediaemprestimos {
+    background-color: white;
+    width: 700px;
+    height: 500px;
+    padding-top: 20px;
+    margin-top: 2%;
+    filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.25));
+    text-align: center;
+}
+
+.prazolivros {
+    background-color: white;
+    width: 900px;
+    height: 500px;
+    padding-top: 20px;
+    margin-top: 2%;
+    filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.25));
+    text-align: center;
+    
+}
+
+.prazolivros h1 {
+    text-align: center;
+}
+
+
+
+
+/* Responsividade */
+.mobile-menu div {
+    width: 32px;
+    height: 2px;
+    background: white;
+    margin: 8px;
+    
+}
+
+.mobile-menu {
+    cursor: pointer;
+}
+/* Cards */
+@media screen and (max-width: 720px) {
+    main.cards {
+        flex-direction: column;
+    }
+
+    main.cards section.card {
+        margin-left: 0;
+        margin-bottom: 32px;
+    }
+
+    main.cards section.card:last-child {
+        margin-bottom: 0;
+    }
+
+    main.cards section.card button {
+        font-size: 70%;
+    }
+    .icone {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .banner {
+        display: none;
+    }
+}
+
+

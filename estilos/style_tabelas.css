@@ -1,0 +1,280 @@
+/* Fontes externas */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100&family=Tiro+Devanagari+Hindi&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Roboto:wght@100&display=swap');
+
+
+@font-face {
+  font-family: 'fonte-felipinho2';
+  src: url(/READ/fontes/MiSans-Light.ttf) format('truetype'); 
+}
+
+body {
+  background-image: linear-gradient( to right, rgb(143, 172, 253), rgb(146, 219, 255));
+  
+}
+h1 {
+  font-family: 'fonte-felipinho2';
+  color: #12305F;
+  font-size: 35px;
+}
+/* Estilo Menu */
+* {
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box; 
+}
+/* MENU */
+#menu ul {
+  list-style-type: none;
+  background-color: #345993;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-bottom: 30px;
+  position: relative;
+
+}
+
+#menu ul li {
+  display: inline;
+  font-style: normal;
+  font-size: 25px;
+  line-height: 30px;
+  color: #FFFFFF;
+}
+#menu ul li i {
+  margin-right: 10px;
+}
+
+
+
+#logo4branca {
+  width: 300px;
+  display: inline-block;
+  left: 50px;
+  top: 10px;
+  position: absolute;
+
+}
+
+#menu ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 40px;
+  display: inline-block;
+  margin-top: 1.5%;
+
+}
+
+#menu ul li a:hover {
+  color: rgb(140, 187, 240);
+  transition: 0.5s;
+}
+
+#menu ul li:last-child {
+  display: inline-block;
+  background-color: #507dc1;
+  font-size: 35px;
+  border-radius: 80px;
+  position: absolute;
+  right: 50px;
+  top: 30px;
+  line-height: 5px;
+  width: 150px;
+  height: 80px;
+
+}
+#menu ul li:last-child:hover {
+  background-color: #C05050;
+  transition: 0.5s;
+
+}
+#menu ul li:last-child a:hover {
+  color: rgb(255, 255, 255);
+  transition: 0.5s;
+}
+
+/* */
+/* Barra de pesquisa*/
+
+.search2 {
+  display: flex;
+}
+.search button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.search {
+
+  height: 30px;
+  display: flex;
+  cursor: pointer;
+  padding: 10px 20px;
+  background-color: white;
+  border-radius: 30px;
+  align-items: center;
+  box-shadow: 0 10px 25px rgba(43, 101, 155, 0.3);
+
+}
+
+.search:hover input {
+  width: 400px;
+}
+
+.search input {
+  width: 85px;
+  outline: none;
+  border: none;
+  font-weight: 500;
+  transition: 0.8s;
+  background: transparent;
+}
+.search button .fa-solid {
+  font-size: 18px;
+  color: #345993;
+}
+.search button .fa-solid:hover {
+  color: #287aff;
+}
+/* Estilos da tabela */
+.container-usuario {
+    margin-top: 5%;
+    margin-left: 1%;
+    margin-right: 1%;
+    padding-bottom: 1%;
+    background-color: #cbe6ff;
+    border-radius: 10px;
+    padding-top: 1px;
+    
+}
+.usuarioh1 {
+    text-align: center;
+    margin-bottom: 2%;
+    margin-top: 2%;
+    
+} 
+
+.novo button {
+    background-color: #507dc1;
+    font-size: 20px;
+    border-radius: 30px;
+    margin-bottom: 15px;
+    padding: 15px;
+    border: none;
+    cursor: pointer;
+    margin-left: 1%;
+    box-shadow: 0 10px 25px rgba(43, 101, 155, 0.3);
+}
+.novo button:hover {
+  background-color: #406498;
+  
+}
+.novo button a {
+  text-decoration: none;
+  color: white;
+  font-family: 'Roboto';
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: rgba(174, 216, 255, 0.6) ;
+    border-radius: 10px 10px 0 0;
+    
+  }
+
+  th, td {
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    
+  }
+
+    th {
+    background-color: rgba(52, 89, 147, 0.9);
+    color: white;
+    font-family: 'Roboto', sans-serif; 
+}
+
+    th:first-child {
+    
+    border-top-left-radius: 10px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  
+    th:last-child {
+    
+    border-top-left-radius: 0px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  td {
+    font-family: 'fonte-felipinho2';
+    color: #062e6e;
+    
+  }
+
+  .iconusuario {
+    width: 22px;
+  }
+  .trash {
+    background-color: #C05050;
+    
+  }
+  .trash:hover {
+    background-color: #9c4242;
+  }
+  td button {
+    background-color: rgb(66, 135, 255);
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-left: 3%;
+  }
+  td button:hover {
+    transition: 1ms;
+    background-color: rgb(49, 103, 195);
+    
+  }
+
+/* responsividade bonitinha */ 
+
+@media (max-width: 768px) {
+    .menu ul {
+      display: none;
+    }
+    .menu ul li {
+      display: block;
+      background-color: #345993;
+      margin-bottom: 10px;
+    }
+    #logo4branca {
+        display: none;
+    }
+    #menu .icone {
+        display: none;
+    }
+    
+  }
+      
+  @media (max-width: 768px) {
+    #menu ul li:last-child {
+        display: block;
+        position: relative;
+        margin-top: 20px;
+        background-color: #507dc1;
+        font-size: 20px;
+        border-radius: 80px;
+        line-height: 5px;
+        width: 150px;
+        height: 80px;
+        padding-right: 9.5%;
+    }
+}
+
