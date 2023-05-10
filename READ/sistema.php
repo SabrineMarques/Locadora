@@ -89,7 +89,7 @@ $registro = mysqli_fetch_assoc($resultado);
                 <li><a href="sair.php"><b>Sair</b></a></li>
             </ul>
         </nav>
-        <img id="bannerwelcome" src="../img/home/Banner welcome.png">
+             <img class="banner" id="bannerwelcome" src="../img/home/Banner welcome.png">
     </div>
     <div id="texto1">
         <h1><u><?php echo $logado; ?></u>, aqui estão <br> seus relatórios.</h1>
