@@ -11,7 +11,7 @@
         $endereco = $_POST['endereco'];
         $cpf = $_POST['cpf'];
 
-                $sqlcliente = "SELECT * FROM usuario WHERE email = '$email' or cpf = '$cpf'"; 
+                $sqlcliente = "SELECT * FROM usuario WHERE email = '$email' or cpf = '$cpf' and cpf !=0"; 
                 $resultado = $conexao->query($sqlcliente); // executa a consulta
 
             if (mysqli_num_rows($resultado) >= 1) { // verifica se encontrou algum registro
