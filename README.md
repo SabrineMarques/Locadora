@@ -8,4 +8,14 @@ O design do site foi pensado para ser atraente e intuitivo, com uma paleta de co
 O código PHP foi utilizado para conectar o site a um banco de dados MySQL, onde todas as informações dos livros e usuários (editoras e aluguéis) são armazenadas. Além disso, a aplicação faz uso de funções de validação de formulários.
 
 Gostaria de destacar que este projeto é uma demonstração de minhas habilidades e resultados dos meus estudos em programação web. Agradeço desde já a atenção e me coloco à disposição para quaisquer esclarecimentos adicionais.
+// INSTRUÇÕES 
+* Antes de tudo realizar a importação do banco de dados disponibilizado no repositório. 
 
+1. Abrir o WAMPServer - para instalar rapidamente no computador os softwares PHP 5, MySQL e Apache, disponibilizando suporte ao uso de scripts PHP localmente no Windows.
+2. Abrir o XAMPP
+3. Startar o APACHE 
+4. Abrir o ADMIN do apache no WAMPP 
+5. Colocar o seguinte link para ser redirecionado para a tela inicial: https://localhost/locadora/login.php
+
+Usuário: administrador <br> 
+Senha: admin
