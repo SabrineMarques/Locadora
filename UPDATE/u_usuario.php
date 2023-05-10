@@ -38,7 +38,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Usuário - WDA Livraria</title>
-     <link rel="stylesheet" href="../CREATE/style_cadastro2.css">
+     <link rel="stylesheet" href="../estilos/style_cadastro2.css">
 </head>
 <body>
 <button><a href="../READ/usuario.php">Voltar</a></button>    
