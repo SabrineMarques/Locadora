@@ -337,7 +337,11 @@ height: 400px;
 }
 
 
-
+h4 {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    color: #507DC0;
+    font-size: 40px;
+}
 
 /* Responsividade */
 .mobile-menu div {
