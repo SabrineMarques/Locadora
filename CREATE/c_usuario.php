@@ -11,11 +11,11 @@
         $endereco = $_POST['endereco'];
         $cpf = $_POST['cpf'];
 
-                $sqlcliente = "SELECT * FROM usuario WHERE email = '$email'"; 
+                $sqlcliente = "SELECT * FROM usuario WHERE email = '$email' or cpf = '$cpf'"; 
                 $resultado = $conexao->query($sqlcliente); // executa a consulta
 
             if (mysqli_num_rows($resultado) >= 1) { // verifica se encontrou algum registro
-            $mensagem = 'E-mail já existente'; // define a mensagem de erro
+            $mensagem = 'E-mail ou CPF já existentes'; // define a mensagem de erro
       } else {
          $result = mysqli_query($conexao, "INSERT INTO usuario (nome_usuario, celular, cidade, email, endereco, cpf) VALUES ('$username', '$celular','$cidade', '$email', '$endereco', '$cpf')");
          
