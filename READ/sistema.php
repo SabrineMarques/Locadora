@@ -55,7 +55,13 @@ if (!$resultado) {
 // Obtém o registro mais recente da tabela
 $registro = mysqli_fetch_assoc($resultado);
 
-
+// Livro mais alugado 
+$sql_mais_alugado = "SELECT livro FROM aluga WHERE livro=livro GROUP BY livro ORDER BY COUNT(livro) DESC LIMIT 1";
+$resultado_mais_alugado = $conexao->query($sql_mais_alugado);
+$mais_alugado = $resultado_mais_alugado->fetch_assoc();
+if(isset( $mais_alugado['livro'])){
+$mais_alug=  $mais_alugado['livro'];
+}
 
 ?>
 <!DOCTYPE html>
@@ -123,6 +129,23 @@ $registro = mysqli_fetch_assoc($resultado);
 
                 <button><a href="livro.php"><b>Saiba mais</b></a></button>
             </section>
+ <section class="card about">
+                <div class="icon">
+                    <img src="../img/ícones/trofeu.png">
+                </div>
+                <h3> <?php if(isset($mais_alug)){
+              echo "<h4>".$mais_alug."</h4>"."<br>";
+              
+            }else{
+              echo "<h5>O livro mais alugado vai aparecer aqui!</h5>";
+            }
+            
+            ?></h3>
+                <span>O livro mais alugado</span>
+                <button><a href="livro.php"><b>Saiba mais</b></a></button>
+            </section>
+          
+            
         </main>
     </div>
     <div class="ultimoaluguel">
@@ -132,16 +155,6 @@ $registro = mysqli_fetch_assoc($resultado);
         <h2><i class="fa-solid fa-clock"></i><?php echo "Data: " . "<span>" . $registro['data_aluguel'] . "</span>"; ?></h2>
         <button><a href="aluguel.php"><b>Ver o aluguel</b></a></button>
     </div>
-    <!-- <div class="mediaemprestimos">
-            <h1>Média de Empréstimos por Usuário</h1>
-        </div>
-        <div class="prazolivros">
-            <h1>Livros devolvidos dentro e fora do prazo</h1>
-            <h2>Livros Dentro do prazo</h2>
-            <h3><?php  ?></h3>
-            <h2>Livros fora do prazo</h2>
-            <h3></h3>
-        </div>  -->
     </div>
     <footer>
         <ul>
