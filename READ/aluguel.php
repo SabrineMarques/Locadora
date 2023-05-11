@@ -82,13 +82,7 @@ $result = $conexao->query($sql);
           </div>
         </thead>
         <tbody>
-          <!-- O MySQL é um sistema de gerenciamento de banco de dados (SGBD) amplamente utilizado para armazenar, gerenciar e recuperar informações.
-
-  O método mysqli_fetch_assoc() é usado em conjunto com a extensão MySQLi do PHP para recuperar uma linha de resultado de uma consulta MySQL como um array associativo. Isso significa que, em vez de indexar os dados por meio de números (como em um array numérico), os dados são indexados por meio de chaves de strings que correspondem aos nomes das colunas da tabela do banco de dados.
-CALMAI HMHMHMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-Por exemplo, se você tiver uma tabela de usuários com as colunas "id", "nome", "email" e "idade", o método mysqli_fetch_assoc() pode ser usado para recuperar cada linha de dados como um array associativo com as chaves "id", "nome", "email" e "idade". Esses dados podem então ser usados ​​para exibir informações na sua aplicação web, ou para manipular ou atualizar os dados na tabela do banco de dados.
-
-Espero que isso ajude você a entender o que o método mysqli_fetch_assoc() faz! -->
+    
           <?php
           while ($user_data =  mysqli_fetch_assoc($result)) {
             echo "<tr>";
