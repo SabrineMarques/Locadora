@@ -8,12 +8,23 @@ if (isset($_POST['submit'])) {
     $data_aluguel = $_POST['data_aluguel'];
     $data_devolucao = $_POST['data_devolucao'];
     $data_previsao = $_POST['data_previsao'];
+    $quantidade = 1;
 
-    $result = mysqli_query($conexao, "INSERT INTO aluga (livro, usuario, data_aluguel, data_devolucao, data_previsao ) VALUES ('$livro', '$usuario', '$data_aluguel', '$data_devolucao', '$data_previsao')");
+    $result = mysqli_query($conexao, "INSERT INTO aluga (livro, usuario, data_aluguel, data_previsao,  quantidade_alugada ) 
+    VALUES ('$livro', '$usuario', '$data_aluguel','$data_previsao','$quantidade')");
 
+
+    $sqllivro_conect = "SELECT * FROM livro WHERE nome_livro = '$livro'";
+    $resultlivro_conect = $conexao->query($sqllivro_conect);
+    $livro_data = mysqli_fetch_assoc($resultlivro_conect);
+    $nomeLivro_BD = $livro_data['nome_livro'];
+    $quantidade_BD = $livro_data['quantidade'];
+    $quantidade_nova = $quantidade_BD - 1;
+
+    $sqlAlterar = "UPDATE livro SET quantidade = '$quantidade_nova' WHERE nome_livro = '$nomeLivro_BD'";
+    $sqlResultAlterar = $conexao->query($sqlAlterar);
     header('location: ../READ/aluguel.php');
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -50,7 +61,7 @@ if (isset($_POST['submit'])) {
                         <select class="select" name="livro">
                             <option>Selecione</option>
                             <?php
-                            include_once('../Config.php');
+                            include_once('../config.php');
                             $sql = "SELECT * FROM livro ORDER BY id_livro";
                             $res = mysqli_query($conexao, $sql);
                             while ($user_aluga = mysqli_fetch_row($res)) {
@@ -91,14 +102,10 @@ if (isset($_POST['submit'])) {
                         <input name="data_aluguel" id="data_aluguel" type="date" placeholder="Digite a data do aluguel" required>
                     </div>
                     <div class="input-box">
-                        <label for="data_devolucao"><b>Data da devolução:</b></label>
-                        <input name="data_devolucao" id="data_devolucao" type="date" placeholder="Digite a data da devolução">
-                    </div>
-                    <div class="input-box">
                         <label for="data_previsao"><b>Data da previsão de entrega:</b></label>
-                        <input name="data_previsao" id="data_previsao" type="date" placeholder="Digite a data da previsão" required>
+                        <input name="data_previsao" id="data_previsao" type="date" placeholder="Selecione a data da previsão de entrega" required>
                     </div>
-
+                    <input type="hidden" name="data_devolucao" id="data_devolucao" value="">
                     <input type="submit" name="submit" id="submit" class="continue-button" value="Continuar">
                 </div>
             </form>

@@ -36,19 +36,24 @@ $result = $conexao->query($sql);
 </head>
 
 <body>
-<nav id="menu">
-            <ul>
-                <a href="sistema.php"><img id="logo4branca" src="../img/logo4branca.png" alt="logo4branca"></a></li>
-             
-                <li><a href="sistema.php"><i class="fa-solid fa-house"></i><b>Início</b></a></li>
-                <li><a href="usuario.php"><i class="fa-solid fa-user"></i><b>Usuário</b></a></a></li>
-                <li><a href="editora.php"><i class="fa-solid fa-building"></i><b>Editora</b></a></a></li>
-                <li><a href="livro.php"><i class="fa-solid fa-book"></i><b>Livros</b></a></a></li>
-                <li><a href="aluguel.php"><i class="fa-solid fa-address-book"></i><b>Aluguel</b></a></a></li>
-   
-                <li><a href="sair.php"><b>Sair</b></a></li>
-            </ul>
-        </nav>
+<header>
+      <nav>
+        <a class="logo" href="sistema.php"><img src="../img/logo4branca.png"></a>
+        <div class="mobile-menu">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+        <ul class="nav-list">
+          <li><a href="sistema.php"><i class="fa-solid fa-house"></i>Início</a></li>
+          <li><a href="usuario.php"><i class="fa-solid fa-user"></i>Usuário</a></li>
+          <li><a href="editora.php"><i class="fa-solid fa-building"></i>Editora</a></li>
+          <li><a href="livro.php"><i class="fa-solid fa-book"></i>Livros</a></li>
+          <li><a href="aluguel.php"><i class="fa-solid fa-address-book"></i>Aluguel</a></li>
+          <li><a href="sair.php">Sair</a></li>
+        </ul>
+      </nav>
+    </header>
   <div class="container-usuario">
     <h1 class="usuarioh1">Editoras</h1>
     <div class="search2">

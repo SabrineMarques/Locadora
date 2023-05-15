@@ -1,8 +1,7 @@
  <?php
-
-
+include_once('../config.php');
     if (isset($_POST['submit'])) {
-        include_once('../config.php');
+        
 
         $username = $_POST['username'];
         $celular = $_POST['celular'];

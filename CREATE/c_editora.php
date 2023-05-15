@@ -15,7 +15,7 @@ if (isset($_POST['submit'])) {
          $result = mysqli_query($conexao, "INSERT INTO editora (nome_editora, cidade) VALUES ('$nome_editora', '$cidade')");
          
         }
-        if (isset($mensag)) { // verifica se há alguma mensagem de erro
+        if (isset($mensagem)) { // verifica se há alguma mensagem de erro
             echo "<script type='text/javascript'>alert('$mensagem').then(() => {window.location.href = '../READ/editora.php';})</script>"; // exibe a mensagem de erro
         }else{
 

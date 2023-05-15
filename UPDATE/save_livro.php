@@ -9,9 +9,9 @@ if(isset($_POST['update'])) {
     $editora = $_POST['editora'];
     $autor = $_POST['autor'];
     $lancamento = $_POST['lancamento'];
+    $quantidade = $_POST['quantidade'];
 
-
-    $sqlUpdate = "UPDATE livro SET nome_livro='$nome_livro', editora='$editora', autor='$autor', lancamento='$lancamento'
+    $sqlUpdate = "UPDATE livro SET nome_livro='$nome_livro', editora='$editora', autor='$autor', lancamento='$lancamento', quantidade ='$quantidade'
     WHERE id_livro='$id_livro'";
 
     $result = $conexao->query($sqlUpdate); 

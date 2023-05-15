@@ -15,6 +15,7 @@ if (!empty($_GET['id_livro'])) {
             $editora = $user_data['editora'];
             $autor = $user_data['autor'];
             $lancamento = $user_data['lancamento'];
+            $quantidade = $user_data['quantidade'];
         }
     } else {
         header('Location: ../READ/livro.php');
@@ -85,6 +86,10 @@ if (!empty($_GET['id_livro'])) {
                     <div class="input-box">
                         <label for="lancamento"><b>Lançamento:</b></label>
                         <input name="lancamento" id="lancamento" type="lancamento" value="<?php echo $lancamento ?>" placeholder="Digite o lançamento" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="quantidade"><b>Quantidade do estoque:</b></label>
+                        <input name="quantidade" id="quantidade" type="text" value="<?php echo $quantidade ?>" placeholder="Digite a quantidade de livros" required>
                     </div>
                     <input type="hidden" name="id_livro" value="<?php echo $id_livro ?>">
                     <input type="submit" name="update" id="update" class="continue-button" value="Salvar">

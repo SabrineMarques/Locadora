@@ -1,21 +1,22 @@
 <?php
+ include_once('../config.php');
 if (isset($_POST['submit'])) {
 
-    include_once('../config.php');
 
     $nome_livro = $_POST['nome_livro'];
     $editora = $_POST['editora'];
     $autor = $_POST['autor'];
     $lancamento = $_POST['lancamento'];
+    $quantidade = $_POST['quantidade'];
     
-    
-    $sqlcliente = "SELECT * FROM livro WHERE nome_livro = '$nome_livro'"; 
+    $sqlcliente = "SELECT * FROM livro WHERE nome_livro = '$nome_livro'";
+
                 $resultado = $conexao->query($sqlcliente); // executa a consulta
 
-            if (mysqli_num_rows($resultado) >= 1) { // verifica se encontrou algum registro
-            $mensagem = 'Livro já existente'; // define a mensagem de erro
+            if (mysqli_num_rows($resultado) > 0) { // verifica se encontrou algum registro
+            $mensagem = 'Livro já cadastrado'; // define a mensagem de erro
       } else {
-        $result = mysqli_query($conexao, "INSERT INTO livro (nome_livro, autor, editora, lancamento) VALUES ('$nome_livro', '$autor','$editora', '$lancamento')");
+        $result = mysqli_query($conexao, "INSERT INTO livro (nome_livro, autor, editora, lancamento, quantidade) VALUES ('$nome_livro', '$autor','$editora', '$lancamento','$quantidade')");
          
         }
         if (isset($mensagem)) { // verifica se há alguma mensagem de erro
@@ -64,16 +65,16 @@ if (isset($_POST['submit'])) {
                             <select class="select" name="editora">
                                 <option>Selecione</option>
                                 <?php
-                                include_once('../Config.php');
+                                include_once('../config.php');
                                 $sql = "SELECT * FROM editora ORDER BY id_editora";
                                 $res = mysqli_query($conexao, $sql);
                                 while ($user_livro = mysqli_fetch_row($res)) {
                                     //puxar dados pelo id
                                     $id_livro = $user_livro[0];
                                     //
-                                    $nome_livro = $user_livro[1];
+                                    $nome_editora = $user_livro[1];
 
-                                    echo "<option class='editora' value='$nome_livro'>$nome_livro</option>";
+                                    echo "<option class='editora' value='$nome_editora'>$nome_editora</option>";
                                 }
                                 ?>
                             </select>
@@ -88,7 +89,10 @@ if (isset($_POST['submit'])) {
                         <label for="lancamento"><b>Lançamento:</b></label>
                         <input name="lancamento" id="lancamento" type="text" placeholder="Digite o lançamento do livro" required>
                     </div>
-
+                    <div class="input-box">
+                        <label for="quantidade"><b>Quantidade do estoque:</b></label>
+                        <input name="quantidade" id="quantidade" type="text" placeholder="Digite a quantidade de livros" required>
+                    </div>
                     <input type="submit" name="submit" id="submit" class="continue-button" value="Continuar">
                 </div>
             </form>

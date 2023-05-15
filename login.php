@@ -21,7 +21,6 @@
                         <h1>Faça seu login</h1>
                         <br>
                         <h2>É rapidinho!</h2>
-
                     </div>
                 </div>
                 <div class="input-group">
@@ -39,4 +38,5 @@
         </div>
     </div>
 </body>
+
 </html>

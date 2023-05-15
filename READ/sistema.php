@@ -13,11 +13,12 @@ $logado = $_SESSION['username'];
 //dados
 
 
-//Lirvos dentro e fora do prazo
+//Livros dentro e fora do prazo
 $sql = "SELECT * FROM aluga ORDER BY id_aluguel DESC";
-$result = $conexao->query($sql);
+$result = mysqli_query($conexao, $sql);
 $total_prazo = 0;
 $total_foraprazo = 0;
+$total_alugados = 0;
 while ($user_data = mysqli_fetch_assoc($result)) {
     echo "<tr>";
     $user_data['id_aluguel'];
@@ -27,14 +28,23 @@ while ($user_data = mysqli_fetch_assoc($result)) {
     $data_dev = $user_data['data_devolucao'];
     //   $user_data['Quantidade'];
     //Livro no prazo
-    if ($data_pre > $data_dev) {
-        $total_prazo++;
+    $hoje = date("Y-m-d");
+    $previsao = $user_data['data_previsao'];
+    
+
+    if ($data_dev !== '') {
+        if ($previsao >= $hoje)  {
+            $total_prazo++;
+        }
     }
     //Livro fora prazo
-    if ($data_pre < $data_dev) {
-        $total_foraprazo++;
+    if (($previsao < $hoje) && $data_dev !== '') {
+      $total_foraprazo++;
     }
-
+    if ($data_dev == '') {
+        $total_alugados++;
+    }
+}
     //Total de livros
     $sql_total_livros = "SELECT COUNT(*) AS nome_livro FROM livro";
     $resultado_total_livros = $conexao->query($sql_total_livros);
@@ -42,7 +52,6 @@ while ($user_data = mysqli_fetch_assoc($result)) {
     if (isset($linha_total_livros['nome_livro'])) {
         $total_livros = $linha_total_livros['nome_livro'];
     }
-}
 // Consulta SQL para selecionar o registro mais recente
 $sql = "SELECT * FROM aluga ORDER BY id_aluguel DESC LIMIT 1";
 $resultado = mysqli_query($conexao, $sql);
@@ -62,7 +71,6 @@ $mais_alugado = $resultado_mais_alugado->fetch_assoc();
 if(isset( $mais_alugado['livro'])){
 $mais_alug=  $mais_alugado['livro'];
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -79,22 +87,24 @@ $mais_alug=  $mais_alugado['livro'];
 <body>
 
     <div class="container">
-        <nav id="menu">
-            <ul>
-                <!-- <div class="mobile-menu">
-                    <div class="line1"></div>
-                    <div class="line2"></div>
-                    <div class="line3"></div>
-                </div> -->
-                <a href="sistema.php"><img id="logo4branca" src="../img/logo4branca.png" alt="logo4branca"></a></li>
-                <li><a href="sistema.php"><i class="fa-solid fa-house"></i><b>Início</b></a></li>
-                <li><a href="usuario.php"><i class="fa-solid fa-user"></i><b>Usuário</b></a></a></li>
-                <li><a href="editora.php"><i class="fa-solid fa-building"></i><b>Editora</b></a></a></li>
-                <li><a href="livro.php"><i class="fa-solid fa-book"></i><b>Livros</b></a></a></li>
-                <li><a href="aluguel.php"><i class="fa-solid fa-address-book"></i><b>Aluguel</b></a></a></li>
-                <li><a href="sair.php"><b>Sair</b></a></li>
-            </ul>
-        </nav>
+    <header>
+      <nav>
+        <a class="logo" href="sistema.php"><img src="../img/logo4branca.png"></a>
+        <div class="mobile-menu">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+        <ul class="nav-list">
+          <li><a href="sistema.php"><i class="fa-solid fa-house"></i>Início</a></li>
+          <li><a href="usuario.php"><i class="fa-solid fa-user"></i>Usuário</a></li>
+          <li><a href="editora.php"><i class="fa-solid fa-building"></i>Editora</a></li>
+          <li><a href="livro.php"><i class="fa-solid fa-book"></i>Livros</a></li>
+          <li><a href="aluguel.php"><i class="fa-solid fa-address-book"></i>Aluguel</a></li>
+          <li><a href="sair.php">Sair</a></li>
+        </ul>
+      </nav>
+    </header>
              <img class="banner" id="bannerwelcome" src="../img/home/Banner welcome.png">
     </div>
     <div id="texto1">
@@ -107,9 +117,9 @@ $mais_alug=  $mais_alugado['livro'];
                 <div class="icon">
                     <img src="../img/ícones/e-book (1).png">
                 </div>
-                <h3><?php echo $total_prazo; ?></h3>
-                <span>Livros alugados atualmente.</span>
-                <button><a href="livro.php"><b>Saiba mais</b></a></button>
+                <h3><?php echo $total_alugados; ?></h3>
+                <span>Livros não entregues.</span>
+                <button><a href="aluguel.php"><b>Saiba mais</b></a></button>
             </section>
             <section class="card shop">
                 <div class="icon">
@@ -127,7 +137,7 @@ $mais_alug=  $mais_alugado['livro'];
                 <h3><?php echo $total_foraprazo; ?></h3>
                 <span>Quantidade de livros em atraso.</span>
 
-                <button><a href="livro.php"><b>Saiba mais</b></a></button>
+                <button><a href="aluguel.php"><b>Saiba mais</b></a></button>
             </section>
  <section class="card about">
                 <div class="icon">
@@ -141,8 +151,8 @@ $mais_alug=  $mais_alugado['livro'];
             }
             
             ?></h3>
-                <span>O livro mais alugado</span>
-                <button><a href="livro.php"><b>Saiba mais</b></a></button>
+                <span class="maisalug">O livro mais alugado</span>
+                <button><a href="aluguel.php"><b>Saiba mais</b></a></button>
             </section>
           
             
@@ -168,5 +178,53 @@ $mais_alug=  $mais_alugado['livro'];
     </footer>
 
 </body>
+<script lang="javascript">
 
+class MobileNavbar {
+  constructor(mobileMenu, navList, navLinks) {
+    this.mobileMenu = document.querySelector(mobileMenu);
+    this.navList = document.querySelector(navList);
+    this.navLinks = document.querySelectorAll(navLinks);
+    this.activeClass = "active";
+
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  animateLinks() {
+    this.navLinks.forEach((link, index) => {
+      link.style.animation
+        ? (link.style.animation = "")
+        : (link.style.animation = `navLinkFade 0.5s ease forwards ${
+            index / 7 + 0.3
+          }s`);
+    });
+  }
+
+  handleClick() {
+    this.navList.classList.toggle(this.activeClass);
+    this.mobileMenu.classList.toggle(this.activeClass);
+    this.animateLinks();
+  }
+
+  addClickEvent() {
+    this.mobileMenu.addEventListener("click", this.handleClick);
+  }
+
+  init() {
+    if (this.mobileMenu) {
+      this.addClickEvent();
+    }
+    return this;
+  }
+}
+
+const mobileNavbar = new MobileNavbar(
+  ".mobile-menu",
+  ".nav-list",
+  ".nav-list li",
+);
+mobileNavbar.init();
+
+
+</script>
 </html>
